@@ -1,0 +1,61 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif,
+    sans-serif;
+
+  font-weight: normal;
+}
+body {
+  padding: 0;
+  margin: 0;
+  background: linear-gradient(90deg, blue, lightblue);
+}
+div {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.calculator {
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+  justify-content: center;
+  align-content: center;
+  min-height: 100vh;
+}
+
+.calculator > button {
+  cursor: pointer;
+  font-size: 2rem;
+  border: 1px solid white;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+.calculator > button:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+.calculator .double-span {
+  grid-column: span 2;
+}
+.calculator .output {
+  grid-column: 1 / -1;
+  background-color: rgba(0, 0, 0, 0.75);
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 15px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.calculator .output .previous-out {
+  font-size: 1.2rem;
+  color: white;
+  opacity: 0.5;
+}
+.calculator .output .current-out {
+  font-size: 2.5rem;
+  color: white;
+  opacity: 1;
+}
