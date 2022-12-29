@@ -1,9 +1,10 @@
 "strict";
 
-class calculator {
+class Calculator {
   constructor(previousoperandTextElement, currentoperandTextElement) {
     this.previousoperandTextElement = previousoperandTextElement;
     this.currentoperandTextElement = currentoperandTextElement;
+    //i wanna call this once i open it to clear it
     this.clear();
   }
 
@@ -14,13 +15,17 @@ class calculator {
   }
 
   delete() {}
-  appendNumber(number) {}
+  appendNumber(number) {
+    this.currentoperandTextElement.innerText = number;
+  }
 
   chooseOperations(operation) {}
 
   compute() {}
 
-  updateDisplay() {}
+  updateDisplay() {
+    this.currentoperandTextElement.innerText = currentoperandTextElement;
+  }
 }
 const operations = document.querySelectorAll("[data-operations]");
 const numberButtons = document.querySelectorAll("[data-number]");
@@ -34,3 +39,14 @@ const previousoperandTextElement = document.querySelector(
 const currentoperandTextElement = document.querySelector(
   "[data-current-operand]"
 );
+//class
+const calculator = new Calculator(
+  previousoperandTextElement,
+  currentoperandTextElement
+);
+numberButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    calculator.appendNumber(button.innerText);
+    calculator.updateDisplay();
+  });
+});
