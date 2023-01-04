@@ -6,18 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link href="/cssStyle.css" rel="stylesheet" />
-    <script src="/javaS.js"></script>
   </head>
 
   <body>
     <div class="calculator">
       <div class="output">
-        <div dat-previous-operand class="previous-out"></div>
-        <div data-current-operand class="current-out"></div>
+        <div data-previous-operand id="po" class="previous-out"></div>
+        <div data-current-operand id="co" class="current-out"></div>
       </div>
       <button data-all-clear class="double-span">AC</button>
       <button data-delete>DEL</button>
-      <button data-operation>&#247;</button>
+      <button data-operation>÷</button>
       <button data-number>1</button>
       <button data-number>2</button>
       <button data-number>3</button>
@@ -34,5 +33,6 @@
       <button data-number>0</button>
       <button data-equals class="double-span">=</button>
     </div>
+    <script src="/javaS.js"></script>
   </body>
 </html>
