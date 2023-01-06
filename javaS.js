@@ -43,13 +43,20 @@ class Calculator {
         break;
       case "-":
         competation = prev - curr;
+        console.log(competation);
         break;
       case "*":
         competation = prev * curr;
         console.log(competation);
+        console.log(2 * 3);
+        console.log(operationsButton);
         break;
+
       case "÷":
         competation = prev / curr;
+        console.log(competation);
+        break;
+      // this.updateDisplay();
       default:
         return;
     }
@@ -103,5 +110,5 @@ allclearButton.addEventListener("click", (button) => {
   calculator.clear();
   calculator.updateDisplay();
 });
-console.log(allclearButton);
-console.log(2 * 3);
+
+console.log(operationsButton);
