@@ -14,7 +14,9 @@ class Calculator {
     this.operation = undefined;
   }
 
-  delete() {}
+  delete() {
+    this.currentoperand = this.currentoperand.toString().slice(0, -1);
+  }
   appendNumber(number) {
     if (number === "." && this.currentoperand.includes(".")) return;
     this.currentoperand = this.currentoperand.toString() + number.toString();
@@ -56,7 +58,7 @@ class Calculator {
         competation = prev / curr;
         console.log(competation);
         break;
-      // this.updateDisplay();
+
       default:
         return;
     }
@@ -68,6 +70,9 @@ class Calculator {
   updateDisplay() {
     this.currentoperandTextElement.innerText = this.currentoperand;
     this.previousoperandTextElement.innerText = this.previousoperand;
+    if (this.operation != null) {
+      this.previousoperandTextElement.innerText = `${this.previousoperand} ${this.operation}`;
+    }
   }
 }
 // const operations = document.querySelectorAll("[data-operations]");
@@ -111,4 +116,11 @@ allclearButton.addEventListener("click", (button) => {
   calculator.updateDisplay();
 });
 
-console.log(operationsButton);
+deleteButton.addEventListener("click", (button) => {
+  calculator.delete();
+  calculator.updateDisplay();
+});
+
+const hello = "iamhere";
+const fol = hello.slice(0, -2);
+console.log(fol);
