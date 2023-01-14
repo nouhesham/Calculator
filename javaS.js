@@ -35,9 +35,12 @@ class Calculator {
 
   compute() {
     let competation;
+    //parse float to change it to number
     const prev = parseFloat(this.previousoperand);
     const curr = parseFloat(this.currentoperand);
+    //if the there is no previous or current then stop working
     if (isNaN(prev) || isNaN(curr)) return;
+    //using switch case for having more than one case
     switch (this.operation) {
       case "+":
         competation = prev + curr;
@@ -120,7 +123,3 @@ deleteButton.addEventListener("click", (button) => {
   calculator.delete();
   calculator.updateDisplay();
 });
-
-const hello = "iamhere";
-const fol = hello.slice(0, -2);
-console.log(fol);
